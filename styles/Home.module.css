@@ -1,0 +1,282 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #000000;
+    --foreground: #FFD700;
+
+    --card: #333333;
+    --card-foreground: #FFD700;
+
+    --popover: #000000;
+    --popover-foreground: #FFD700;
+
+    --primary: #FFD700;
+    --primary-foreground: #000000;
+
+    --secondary: #FFD700;
+    --secondary-foreground: #000000;
+
+    --muted: #555555;
+    --muted-foreground: #FFD700;
+
+    --accent: #FFD700;
+    --accent-foreground: #000000;
+
+    --destructive: #ff0004;
+    --destructive-foreground: #FFD700;
+
+    --border: #FFD700;
+    --input: #333333;
+    --ring: #FFD700;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: #000000;
+    --foreground: #FFD700;
+
+    --card: #333333;
+    --card-foreground: #FFD700;
+
+    --popover: #000000;
+    --popover-foreground: #FFD700;
+
+    --primary: #FFD700;
+    --primary-foreground: #000000;
+
+    --secondary: #FFD700;
+    --secondary-foreground: #000000;
+
+    --muted: #555555;
+    --muted-foreground: #FFD700;
+
+    --accent: #FFD700;
+    --accent-foreground: #000000;
+
+    --destructive: #ff0004;
+    --destructive-foreground: #FFD700;
+
+    --border: #FFD700;
+    --input: #333333;
+    --ring: #FFD700;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .wave-bg {
+    background: linear-gradient(270deg, #FFD700, #000000);
+    background-size: 200% 200%;
+    animation: wave 10s infinite linear;
+  }
+
+  @keyframes wave {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .mainnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid var(--border);
+    background-color: var(--background);
+    color: var(--foreground);
+    padding: 2px;
+  }
+
+  .sidenav {
+    display: flex;
+    text-indent: 30px;
+    list-style-type: none;
+  }
+
+  .one {
+    color: var(--foreground);
+    text-decoration: none;
+    font-weight: 200;
+  }
+
+  .containerlisting {
+    width: 500px;
+    height: 350px;
+    border: 2px solid var(--border);
+    display: flexbox;
+    flex-direction: row-reverse;
+    text-indent: 40px;
+    margin: 50px;
+    border-radius: 10px;
+    background: linear-gradient(rgba(0, 0, 150, 0.2), rgba(0, 0, 50, 0.3)), rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.5s;
+  }
+
+  .containerlisting:hover {
+    transform: scale(1.05);
+  }
+
+  .containerlisting h1 {
+    font-size: 45px;
+    margin: 20px;
+  }
+
+  .containerlisting h2 {
+    font-size: 34px;
+  }
+
+  .mainlisting {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--popover);
+    padding: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    animation: popupAnimation 0.3s ease-in-out;
+  }
+
+  @keyframes popupAnimation {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .popup p {
+    font-size: 24px;
+    text-align: center;
+    color: var(--popover-foreground);
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+
+  .main {
+    min-height: 100vh;
+    padding: 4rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer {
+    display: flex;
+    flex: 1;
+    padding: 2rem 0;
+    border-top: 1px solid #eaeaea;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .title a {
+    color: #0d76fc;
+    text-decoration: none;
+  }
+
+  .title a:hover,
+  .title a:focus,
+  .title a:active {
+    text-decoration: underline;
+  }
+
+  .title {
+    margin: 3rem 0;
+    line-height: 1;
+    font-size: 2.5rem;
+  }
+
+  .title,
+  .description {
+    text-align: center;
+  }
+
+  .description {
+    margin: 0 0 2rem;
+    line-height: 1.5;
+    font-size: 1.5rem;
+  }
+
+  .grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+  }
+
+  .card {
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: left;
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    max-width: 350px;
+  }
+
+  .card:hover,
+  .card:focus,
+  .card:active {
+    color: #0d76fc;
+    border-color: #0d76fc;
+  }
+
+  .card h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 600px) {
+    .grid {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+}

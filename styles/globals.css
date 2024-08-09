@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+  body {
+    background: linear-gradient(to right, #4FD1C5, #9F7AEA, #4C51BF); /* Gradient from teal-400 to purple-500 to indigo-600 */
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s infinite linear;
+    color: var(--foreground);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+
+@layer base {
+  :root {
+    --background: #000000; /* Default background */
+    --foreground: #FFFFFF; /* Text color */
+
+    --card: #333333;
+    --card-foreground: #FFFFFF;
+
+    --popover: #000000;
+    --popover-foreground: #FFFFFF;
+
+    --primary: #FFD700; /* Primary color */
+    --primary-foreground: #000000;
+
+    --secondary: #00FF00; /* Secondary color */
+    --secondary-foreground: #000000;
+
+    --muted: #555555;
+    --muted-foreground: #FFFFFF;
+
+    --accent: #00FF00; /* Accent color */
+    --accent-foreground: #000000;
+
+    --destructive: #ff0004;
+    --destructive-foreground: #FFFFFF;
+
+    --border: #FFD700;
+    --input: #333333;
+    --ring: #FFD700;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: #000000;
+    --foreground: #FFFFFF;
+
+    --card: #333333;
+    --card-foreground: #FFFFFF;
+
+    --popover: #000000;
+    --popover-foreground: #FFFFFF;
+
+    --primary: #FFD700;
+    --primary-foreground: #000000;
+
+    --secondary: #00FF00; /* Secondary color */
+    --secondary-foreground: #000000;
+
+    --muted: #555555;
+    --muted-foreground: #FFFFFF;
+
+    --accent: #00FF00; /* Accent color */
+    --accent-foreground: #000000;
+
+    --destructive: #ff0004;
+    --destructive-foreground: #FFFFFF;
+
+    --border: #FFD700;
+    --input: #333333;
+    --ring: #FFD700;
+  }
+
+  body {
+    background: linear-gradient(to right, #4FD1C5, #9F7AEA, #4C51BF); /* Gradient from teal-400 to purple-500 to indigo-600 */
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s infinite linear;
+    color: var(--foreground);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .containerlisting {
+    width: 500px;
+    height: 350px;
+    border: 2px solid var(--border);
+    display: flexbox;
+    flex-direction: row-reverse;
+    text-indent: 40px;
+    margin: 50px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #2D3748, #4A5568); /* Gradient from gray-800 to gray-600 */
+    background-opacity: 0.4;
+    backdrop-filter: blur(10px);
+    transition: transform 0.5s;
+  }
+
+  .containerlisting:hover {
+    transform: scale(1.05);
+  }
+
+  .containerlisting h1 {
+    font-size: 45px;
+    margin: 20px;
+    color: var(--primary);
+  }
+
+  .containerlisting h2 {
+    font-size: 34px;
+    color: var(--primary);
+  }
+
+  .mainlisting {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--popover);
+    padding: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    animation: popupAnimation 0.3s ease-in-out;
+  }
+
+  @keyframes popupAnimation {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .popup p {
+    font-size: 24px;
+    text-align: center;
+    color: var(--popover-foreground);
+  }
+}
