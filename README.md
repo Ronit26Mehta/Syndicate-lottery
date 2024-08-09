@@ -53,6 +53,8 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
    ![image](https://github.com/user-attachments/assets/29304e7d-7571-43a6-8ccf-4b34166f22fd)
    user dashboard(hosting  a lotto):
    ![image](https://github.com/user-attachments/assets/cb119e9d-ffb3-4faa-a0dd-5548ae8f2d8f)
-   
+   lottery making page:
+   ![image](https://github.com/user-attachments/assets/157e73c2-26b2-427e-b79c-2ee35e9ad78f)
+
 
 
